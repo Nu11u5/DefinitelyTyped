@@ -184,6 +184,8 @@ declare namespace GoogleAppsScript {
           getAutoForwarding(userId: string): Gmail.Schema.AutoForwarding;
           // Gets IMAP settings.
           getImap(userId: string): Gmail.Schema.ImapSettings;
+          // Gets language settings.
+          getLanguage(userId: string): Gmail.Schema.LanguageSettings;
           // Gets POP settings.
           getPop(userId: string): Gmail.Schema.PopSettings;
           // Gets vacation responder settings.
@@ -193,6 +195,8 @@ declare namespace GoogleAppsScript {
           updateAutoForwarding(resource: Schema.AutoForwarding, userId: string): Gmail.Schema.AutoForwarding;
           // Updates IMAP settings.
           updateImap(resource: Schema.ImapSettings, userId: string): Gmail.Schema.ImapSettings;
+          // Updates language settings.
+          updateLanguage(resource: Schema.LanguageSettings, userId: string): Gmail.Schema.LanguageSettings;
           // Updates POP settings.
           updatePop(resource: Schema.PopSettings, userId: string): Gmail.Schema.PopSettings;
           // Updates vacation responder settings.
@@ -322,6 +326,9 @@ declare namespace GoogleAppsScript {
       interface LabelColor {
         backgroundColor?: string;
         textColor?: string;
+      }
+      interface LanguageSettings {
+        displayLanguage?: string;
       }
       interface ListDelegatesResponse {
         delegates?: Gmail.Schema.Delegate[];
@@ -487,6 +494,8 @@ declare namespace GoogleAppsScript {
     newLabel(): Gmail.Schema.Label;
     // Create a new instance of LabelColor
     newLabelColor(): Gmail.Schema.LabelColor;
+    // Creates a new instance of LanguageSettings
+    newLanguageSettings(): Gmail.Schema.LanguageSettings
     // Create a new instance of Message
     newMessage(): Gmail.Schema.Message;
     // Create a new instance of MessagePart
